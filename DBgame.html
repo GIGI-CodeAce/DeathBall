@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DEATH BALL</title>
+    <link rel="stylesheet" href="gameStyle.css">
+    <link rel="icon" type="image/jpg" href="Media/skin.png">
+</head>
+<body>
+    <button id="hitboxBtn">OFF</button>
+
+    <div class="settings-popup">
+        <button id="exit-settings">X</button>
+            <span id="article-title">Settings</span>
+            <div class="controls">
+                <h4 id="desc">Experience the thrill of Death Ball, a game that challenges you to navigate through dynamic obstacles, bouncing spheres,
+                     and difficulty variations. Test your reflexes and strategy as you strive to survive in this visually captivating adventure.
+                     How long can you endure the chaos and set your high score?</h4>
+                <h4 id="desc"><u>inGame Controls</u></h4>
+                    <div class="set-category">
+                    <h5>Player Walk</h5>
+                    <span id="control-keys">→ - ↑ - ↓ - ←</span>
+                    <span id="control-keys">W - A - S - D</span>
+                </div>
+                <div class="shortcuts">
+                    <div class="set-category">
+                        <h5>Menu</h5>
+                        <span id="control-keys">E</span>
+                </div>
+                    <div class="set-category">
+                        <h5>Ability</h5>
+                        <span id="control-keys">Q - Click</span>
+                </div>
+                    <div class="set-category">
+                        <h5>Replay</h5>
+                        <span id="control-keys">R</span>
+                </div>
+            </div>
+            </div>
+            </div>
+    <header>
+        <div class="about"></div>
+        <h2 id="title">DEATH BALL</h2>
+        <h3 id="difficulty1">Normal Mode</h3>
+        <h3 id="difficulty2">INSANE Mode</h3>
+        <h3 id="difficulty3">HORIZONTAL Mode</h3>
+        <h3 id="difficulty4">VERTICAL Mode</h3>
+    </header>
+    <main>
+        <span id="delay">(0)</span>
+        <span id="timer">00:00:00</span>
+        <div class="abil-delay">
+            <span id="abilStatus"><< Ability status</span>
+            <span id="abil-delay">9 -</span>
+            <span id="abil-duration">&nbsp;3</span>
+        </div>
+
+        <canvas id="canvasid1"></canvas>
+        <!-- Skins -->
+        <img id="player1" src="Media/skin.png">
+        <img id="player2" src="Media/skin2.png">
+        <img id="player3" src="Media/skin3.png">
+        <img id="player4" src="Media/skin4.png">
+        <img id="player5" src="Media/skin5.png">
+        <img id="player6" src="Media/skin6.png">
+        <!-- Ability's-->
+        <img id="yellowSheild" src="Media/yellowSheild.png">
+        <img id="redSheild" src="Media/redSheild.png">
+        <img id="cyanSheild" src="Media/cyanSheild.png">
+        <img id="offSheild" src="Media/offSheild.png" >
+        <!-- Walls -->
+        <img id="wall1" src="Media/wall.jpg">
+        <img id="wall2" src="Media/wall2.png">
+        <img id="wall3" src="Media/wall3.jpg">
+    </main>
+    <footer>
+        <button id="replay-btn">REPLAY</button>
+        <button id="menu-btn">MENU</button>
+    </footer>
+
+    <script type="module" src="gameScript.js"></script>
+</body>
+</html>
