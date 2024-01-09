@@ -22,6 +22,7 @@ const timerUI = document.getElementById("timer")
 const delayUI = document.getElementById("delay")
 const replayBTN = document.getElementById("replay-btn")
 const menuBTN = document.getElementById("menu-btn")
+const popBack = document.querySelector(".popBack")
 let countG = 3
 let gameOver = false
 let gameStarted = false
@@ -95,23 +96,27 @@ function showPop(btn, article) {
     if (btn) {
         btn.addEventListener("click", function () {
             article.style.display = "block";
-            Oflow = false
+            popBack.style.display = "block"
         });
     }
 }
-
 function closePop(btn, article) {
     if (btn) {
         btn.addEventListener("click", function () {
             article.style.display = "none";
-            Oflow = true
-            console.log(Oflow);
+            popBack.style.display = "none"
         });
     }
 }
-
   showPop(About, settingsPop);
   closePop(exitSettings, settingsPop);
+
+  document.addEventListener('keydown',function(event){
+    if(event.key === "x" || event.key === "X"){
+        settingsPop.style.display = "none";
+        popBack.style.display = "none"
+    }
+  })
 
 const wall1 = document.getElementById("wall1");
 const wall2 = document.getElementById("wall2");
