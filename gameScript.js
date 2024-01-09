@@ -207,10 +207,10 @@ const color = [
 let ballCol = getRandomItemFromArray(color)
 
 function replay1() {
-    window.location.href = "DBgame.html";
+    window.location.href = "./DBgame";
 }
 function replay2(){
-    window.location.href = "DBmenu.html";
+    window.location.href = "./DBmenu";
 }
 
 replayBTN.addEventListener("click", replay1);

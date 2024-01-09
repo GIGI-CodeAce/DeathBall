@@ -223,7 +223,7 @@ function delOthers4(){
 }
   
   startBTN.addEventListener("click", function(){
-    window.location.href = 'DBgame.html'
+    window.location.href = './DBgame'
   })
   
   function creditsAnimate() {
