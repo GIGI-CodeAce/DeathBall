@@ -12,3 +12,5 @@ Experience the thrill of Death Ball, a game that challenges you to navigate thro
 4 current abilities to use
 
 ![image](https://github.com/GIGI-CodeAce/DeathBall/assets/142694357/88b39746-c76f-4316-9142-25806b3fd766)
+
+And MUCH more to be discovered!
