@@ -4,3 +4,7 @@ Experience the thrill of Death Ball, a game that challenges you to navigate thro
 6 skins to choose from
 
 ![image](https://github.com/GIGI-CodeAce/DeathBall/assets/142694357/43d2b3ef-57cf-4b10-80b9-ea33858c1227)
+
+4 different gamemodes
+
+![image](https://github.com/GIGI-CodeAce/DeathBall/assets/142694357/a6ae2308-10c3-4554-9e11-417cf02c08fc)
