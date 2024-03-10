@@ -666,7 +666,7 @@ function updateCounter(){
         }
             timerUI.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}:${milSecs.toString().padStart(2, '0')}`
     
-        timerInterval = setTimeout(updateCounter , 1)
+        timerInterval = setTimeout(updateCounter , 10)
  }
  updateCounter()
 
