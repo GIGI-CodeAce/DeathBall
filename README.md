@@ -21,7 +21,7 @@ Death Ball, a game that challenges you to navigate through deadly flying spheres
 *   4 unique gamemodes 
 *   6 skins to choose from
 *   3 different abilites with unique mechanics
-*   Able to set time records for most surviving over gamemodes you've playing
+*   Able to set time records for most surviving over gamemodes you've played
 *   Running on HTML 5 canvas by an update function:
 
 ```javascript
