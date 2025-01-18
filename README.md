@@ -1,58 +1,58 @@
-<h1 align="center" id="title">MEMES RNG</h1>
+<h1 align="center" id="title">DeathBall</h1>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/GIGIsOtherStuff/MRNGmedia/main/Media/RNGlogo.png" alt="project-image">
+  <img src="\Media\skins\skin.png" alt="project-image" style="width: 100%; height: 300px">
 </p>
 
 <p id="description">
-  A meme-filled game where random events and internet humor collide for unpredictable fun! Have a gameplay experience and test out your luck with all of the big rarities.
+Death Ball, a game that challenges you to navigate through deadly flying spheres, and difficulty variations. Test your reflexes and strategy as you strive to survive in this captivating adventure. How long can you endure the chaos?
 </p>
 
 <h2 align="center">Play here</h2>
 
 <div align="center">
-  <a href="https://gigi-codeace.github.io/Memes-RNG/">github.io/Memes-RNG</a>
+  <a href="https://gigi-codeace.github.io/DeathBall/DBmenu">github.io/DeathBall/Menu</a>
 </div>
 
 <h2 align="center">🧐 Features</h2>
 
 <h4>Here're some of the project's best features</h4>
 
-*   Famous memes from all around the world
-*   Cards collection index
-*   Exclusive roll animations depending on rolled rarity
-*   An RNG engine for card randomization in function card of rarity:
+*   4 unique gamemodes 
+*   6 skins to choose from
+*   3 different abilites with unique mechanics
+*   Able to set time records for most surviving over gamemodes you've playing
+*   Running on HTML 5 canvas by an update function:
 
 ```javascript
 // ...
-const parseChance = (chance) => {
-  const parts = chance.split(' in ');
-  return parts.length === 2 ? (1 / parseInt(parts[1], 10)) : 0;
-};
+function update() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-const totalWeight = Cards.reduce((sum, card) => sum + parseChance(card.chance), 0);
+        drawPlayer();
+        newPos();
+        drawCircles();
+        moveCircles();
+        checkCollision();
+        ability()
 
-const getRandomCard = () => {
-  const rand = Math.random() * totalWeight;
-  let cumulativeWeight = 0;
-  for (let card of Cards) {
-    cumulativeWeight += parseChance(card.chance);
-    if (rand < cumulativeWeight) {
-      return card;
-    }
-  }
-  return null;
-};
+        //...
+
+        requestAnimationFrame(update);
+}
 // ...
 ```
 <h2 align="center">Project Screenshots:</h2>
 <div align="center">
 <div>
-  <img src="https://raw.githubusercontent.com/GIGIsOtherStuff/MRNGmedia/main/Media/READMEmedia/roll.png" alt="project-screenshot" width="400" height="500">
+<h3>Abilities</h3>
+  <img src="/Media/mdMedia/abilities.png" alt="project-screenshot" width="400" height="500">
 </div>
- <img src="https://raw.githubusercontent.com/GIGIsOtherStuff/MRNGmedia/main/Media/READMEmedia/supremes.png" alt="project-screenshot"  style="width: 100%; height: 400px">
+<h3>Skins</h3>
+ <img src="/Media/mdMedia/characters.png" alt="project-screenshot"  style="width: 100%; height: 400px">
   <img src="https://raw.githubusercontent.com/GIGIsOtherStuff/MRNGmedia/main/Media/READMEmedia/uniques.png" alt="project-screenshot" style="width: 100%; height: 400px">
-  <img src="https://raw.githubusercontent.com/GIGIsOtherStuff/MRNGmedia/main/Media/READMEmedia/cards.png" alt="project-screenshot" style="width: 100%; height: 400px">
+  <h3>Gamemodes</h3>
+  <img src="/Media/mdMedia/gamemodes.png" alt="project-screenshot" style="width: 100%; height: 400px">
 </div><br></br>
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-62b1ff?style=for-the-badge&logo=web&logoColor=white)](https://www.gigicodeace.com)
