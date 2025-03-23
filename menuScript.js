@@ -47,19 +47,23 @@ document.addEventListener("DOMContentLoaded", function(){
   const Hrecord = document.getElementById("Hrecord")
   const Vrecord = document.getElementById("Vrecord")
 
-  Nrecord.textContent = `${minNor.toString().padStart(2, '0')}:${secNor.toString().padStart(2, '0')}:${milNor.toString().padStart(2, '0')}`
-  Irecord.textContent = `${minIns.toString().padStart(2, '0')}:${secIns.toString().padStart(2, '0')}:${milIns.toString().padStart(2, '0')}`
-  Hrecord.textContent = `${minHor.toString().padStart(2, '0')}:${secHor.toString().padStart(2, '0')}:${milHor.toString().padStart(2, '0')}`
-  Vrecord.textContent = `${minVer.toString().padStart(2, '0')}:${secVer.toString().padStart(2, '0')}:${milVer.toString().padStart(2, '0')}`
+  function StoreTimers(record, min, sec, mil){
+    record.textContent = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}:${mil.toString().padStart(2, '0')}`
+  }
+
+  StoreTimers(Nrecord, minNor, secNor, milNor)
+  StoreTimers(Irecord, minIns, secIns, milIns)
+  StoreTimers(Hrecord, minHor, secHor, milHor)
+  StoreTimers(Vrecord, minVer, secVer, milVer)
 
   function closePops(){
-    settingsPop.style.display = "none";
-    abilitiesPop.style.display = "none";
-    skinsPop.style.display = "none";
-    modesUI.style.display = "none";
-    recordsUI.style.display = "none";
-    aboutPop.style.display = "none";
-    popBack.style.display = "none"
+    function closePop(pop){
+      pop.style.display = "none";
+    }
+    closePop(settingsPop);  closePop(abilitiesPop)
+    closePop(skinsPop)   ;  closePop(modesUI)
+    closePop(recordsUI)  ;  closePop(aboutPop)
+    closePop(popBack)
   }
 
   document.addEventListener('keydown',function(event){
@@ -156,71 +160,63 @@ SelectEvent(abil1,1,redDesc)
 SelectEvent(abil2,2,cyanDesc)
 SelectEvent(abil3,3,yellowDesc)
 
-switch (skin) {
-  case 1:
-    delOthers2()
-    skin1.style.borderColor = "green"
-    break;
-  case 2:
-    delOthers2()
-    skin2.style.borderColor = "green"
-    break;
-  case 3:
-    delOthers2()
-    skin3.style.borderColor = "green"
-    break;
-  case 4:
-    delOthers2()
-    skin4.style.borderColor = "green"
-    break;
-  case 5:
-    delOthers2()
-    skin5.style.borderColor = "green"
-    break;
-  case 6:
-    delOthers2()
-    skin6.style.borderColor = "green"
-    break;
+if (skin) {
+  const selectedSkin = document.getElementById("skin" + skin);
+  console.log(selectedSkin);
+  
+  delOthers2();
+
+  if (selectedSkin) {
+    selectedSkin.style.borderColor = "green";
+  }
 }
 
-switch (abilityy) {
-  case 1:
-    delOthers3()
-    delOthers4()
-    abil1.style.borderColor = "green"
-    redDesc.style.display = "block"
-    break;
-  case 2:
-    delOthers3()
-    delOthers4()
-    abil2.style.borderColor = "green"
-    cyanDesc.style.display = "block"
-    break;
-  case 3:
-    delOthers3()
-    delOthers4()
-    abil3.style.borderColor = "green"
-    yellowDesc.style.display = "block"
-    break;
+if (abilityy) {
+  const ability = document.getElementById("abil" + abilityy);
+  delOthers3();
+  delOthers4();
+
+  if (ability) {
+    ability.style.borderColor = "green";
+  }
+
+  switch (abilityy) {
+    case 1:
+      redDesc.style.display = "block";
+      break;
+    case 2:
+      cyanDesc.style.display = "block";
+      break;
+    case 3:
+      yellowDesc.style.display = "block";
+      break;
+  }
 }
-function delOthers2(){
-  skin1.style.borderColor = "black"
-  skin2.style.borderColor = "black"
-  skin3.style.borderColor = "black"
-  skin4.style.borderColor = "black"
-  skin5.style.borderColor = "black"
-  skin6.style.borderColor = "black"
-}
-function delOthers3(){
-  abil1.style.borderColor = "black"
-  abil2.style.borderColor = "black"
-  abil3.style.borderColor = "black"
-}
-function delOthers4(){
-  redDesc.style.display = "none"
-  cyanDesc.style.display = "none"
-  yellowDesc.style.display = "none"
-}
+
+function delOthers2() {
+  for (let i = 1; i <= 6; i++) {
+    const skin = document.getElementById("skin" + i);
+    if (skin) {
+      skin.style.borderColor = "black";
+    }
+  }}
+
+function delOthers3() {
+  for (let i = 1; i <= 3; i++) {
+    const ability = document.getElementById("abil" + i);
+    if (ability) {
+      ability.style.borderColor = "black";
+    }
+  }}
+
+function delOthers4() {
+  const descriptions = ["redDesc", "cyanDesc", "yellowDesc"];
+  descriptions.forEach((descId) => {
+    const desc = document.getElementById(descId);
+    if (desc) {
+      desc.style.display = "none";
+    }
+  });}
   
   startBTN.addEventListener("click", function(){
     window.location.href = './DBgame'
@@ -378,7 +374,7 @@ function delOthers4(){
     normalGame.addEventListener("click", function(){
         diff = 1
         others()
-  })
+      })
     insaneGame.addEventListener("click", function(){
         diff = 2
         others()

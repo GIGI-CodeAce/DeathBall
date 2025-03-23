@@ -1,21 +1,14 @@
 import { diff, skin, abilityy } from "./menuScript.js";
 export let hitbox = JSON.parse(localStorage.getItem("hitbox")) || false
 
-export let milNor = JSON.parse(localStorage.getItem("milNor")) || 0;
-export let minNor = JSON.parse(localStorage.getItem("minNor")) || 0;
-export let secNor = JSON.parse(localStorage.getItem("secNor")) || 0;
+export let milNor = JSON.parse(localStorage.getItem("milNor")) || 0;    export let milIns = JSON.parse(localStorage.getItem("milIns")) || 0;
+export let minNor = JSON.parse(localStorage.getItem("minNor")) || 0;    export let minIns = JSON.parse(localStorage.getItem("minIns")) || 0;
+export let secNor = JSON.parse(localStorage.getItem("secNor")) || 0;    export let secIns = JSON.parse(localStorage.getItem("secIns")) || 0;
 
-export let milIns = JSON.parse(localStorage.getItem("milIns")) || 0;
-export let minIns = JSON.parse(localStorage.getItem("minIns")) || 0;
-export let secIns = JSON.parse(localStorage.getItem("secIns")) || 0;
+export let milVer = JSON.parse(localStorage.getItem("milVer")) || 0;    export let milHor = JSON.parse(localStorage.getItem("milHor")) || 0;
+export let minVer = JSON.parse(localStorage.getItem("minVer")) || 0;    export let minHor = JSON.parse(localStorage.getItem("minHor")) || 0;
+export let secVer = JSON.parse(localStorage.getItem("secVer")) || 0;    export let secHor = JSON.parse(localStorage.getItem("secHor")) || 0;
 
-export let milVer = JSON.parse(localStorage.getItem("milVer")) || 0;
-export let minVer = JSON.parse(localStorage.getItem("minVer")) || 0;
-export let secVer = JSON.parse(localStorage.getItem("secVer")) || 0;
-
-export let milHor = JSON.parse(localStorage.getItem("milHor")) || 0;
-export let minHor = JSON.parse(localStorage.getItem("minHor")) || 0;
-export let secHor = JSON.parse(localStorage.getItem("secHor")) || 0;
 
 const timerUI = document.getElementById("timer")
 
@@ -244,30 +237,10 @@ function newPos() {
     }
 }
 
-let image;
+let SkinTexture;
 
-switch (skin) {
-    case 1:
-        image = document.getElementById("player1");
-        break;
-    case 2:
-        image = document.getElementById("player2");
-        break;
-    case 3:
-        image = document.getElementById("player3");
-        break;
-    case 4:
-        image = document.getElementById("player4");
-        break;
-    case 5:
-        image = document.getElementById("player5");
-        break;
-    case 6:
-        image = document.getElementById("player6");
-        break;
-    default:
-        image = document.getElementById("player1");
-        break;
+if(skin){
+    SkinTexture = document.getElementById(`player${skin}`);
 }
 
 function ability() {
@@ -368,10 +341,10 @@ function drawPlayer() {
         ctx.save();
         ctx.translate(player.x + player.w, player.y);
         ctx.scale(-1, 1);
-        ctx.drawImage(image, 0, 0, player.w, player.h);
+        ctx.drawImage(SkinTexture, 0, 0, player.w, player.h);
         ctx.restore();
     }else {
-        ctx.drawImage(image, player.x, player.y, player.w, player.h);
+        ctx.drawImage(SkinTexture, player.x, player.y, player.w, player.h);
     }
 if (hitbox){
 
@@ -492,7 +465,7 @@ function abilityMechanics(event) {
                     break;
                 case 3:
                     invincible = true;
-                    image.style.opacity = 0.5
+                    SkinTexture.style.opacity = 0.5
                     setTimeout(() => {
                         invincible = false;
                     }, 3000);
