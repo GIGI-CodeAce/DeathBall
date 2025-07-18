@@ -1,4 +1,4 @@
-<h1 align="center" id="title">DeathBall</h1>
+<h1 align="center" id="title">DeathBall v1.1.4</h1>
 
 <p align="center">
   <img src="\Media\skins\skin.png" alt="project-image" style="width: 40%; height: 300px">
@@ -24,6 +24,9 @@ Death Ball, a game that challenges you to navigate through deadly flying spheres
 *   Able to set time records for most surviving over gamemodes you've played
 *   Running on HTML 5 canvas by an update function:
 
+
+<hr>
+
 ```javascript
 // ...
 function update() {
@@ -42,7 +45,7 @@ function update() {
 }
 // ...
 ```
-<h2 align="center">Project Screenshots:</h2>
+<h2 align="center">Project Screenshots</h2>
 <div align="center">
 <div>
 <h3>Abilities</h3>
@@ -52,7 +55,7 @@ function update() {
  <img src="/Media/mdMedia/characters.png" alt="project-screenshot"  style="width: 80%; height: 400px">
   <h3>Gamemodes</h3>
   <img src="/Media/mdMedia/gamemodes.png" alt="project-screenshot" style="width: 80%; height: 420px">
-</div><br></br>
+</div><hr><br></br>
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-62b1ff?style=for-the-badge&logo=web&logoColor=white)](https://www.gigicodeace.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-3e3eff?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dobre-robert-03653b331/)
