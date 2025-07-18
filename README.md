@@ -4,7 +4,7 @@
   <img src="\Media\skins\skin.png" alt="project-image" style="width: 40%; height: 300px">
 </p>
 
-<p id="description">
+<p id="description" align="center" >
 Death Ball, a game that challenges you to navigate through deadly flying spheres, and difficulty variations. Test your reflexes and strategy as you strive to survive in this captivating adventure. How long can you endure the chaos?
 </p>
 
@@ -49,9 +49,9 @@ function update() {
   <img src="/Media/mdMedia/abilities.png" alt="project-screenshot" width="500" height="300">
 </div>
 <h3>Skins</h3>
- <img src="/Media/mdMedia/characters.png" alt="project-screenshot"  style="width: 100%; height: 400px">
+ <img src="/Media/mdMedia/characters.png" alt="project-screenshot"  style="width: 80%; height: 400px">
   <h3>Gamemodes</h3>
-  <img src="/Media/mdMedia/gamemodes.png" alt="project-screenshot" style="width: 600px; height: 400px">
+  <img src="/Media/mdMedia/gamemodes.png" alt="project-screenshot" style="width: 80%; height: 420px">
 </div><br></br>
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-62b1ff?style=for-the-badge&logo=web&logoColor=white)](https://www.gigicodeace.com)
