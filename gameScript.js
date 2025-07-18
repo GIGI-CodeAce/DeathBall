@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function(){
        break;
    }
  }
- hitboxBtn.addEventListener("click", function(){
+if(hitboxBtn){
+     hitboxBtn.addEventListener("click", function(){
    if(hitboxBtn.textContent === "ON"){
      hitboxBtn.textContent = "OFF"
      hitbox = false
@@ -47,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function(){
    }
    localStorage.setItem("hitbox", hitbox.toString());
  })
+}
 
     const canvas = document.querySelector("#canvasid1");
     const ctx = canvas.getContext('2d');
@@ -57,15 +59,15 @@ document.addEventListener("DOMContentLoaded", function(){
 const circle1 = {
     x: 275,
     y: 250,
-    dx: 11,
-    dy: 8,
+    dx: 660,
+    dy: 480,
     size: 30
 }
 const circle2 = {
     x: 275,
     y: 250,
-    dx: 11,
-    dy: 8,
+    dx: 660,
+    dy: 480,
     size: 30
 }
 
@@ -74,7 +76,7 @@ const player = {
     h: 60,
     x: 20,
     y: 220,
-    speed: 5,
+    speed: 300,
     dx: 0,
     dy: 0,
     keys: {},
@@ -240,19 +242,19 @@ function newPos() {
 let SkinTexture;
 
 if(skin){
-    SkinTexture = document.getElementById(`player${skin}`);
+    SkinTexture = document.getElementById(`player${skin}`)
 }
 
 function ability() {
     switch (abilityy) {
         case 1:
-            abilityPlace(redAbility, 1);
+            abilityPlace(redAbility, 1)
                 break;
         case 2:
-            abilityPlace(cyanAbility,1);
+            abilityPlace(cyanAbility,1)
                 break;
         case 3:
-            abilityPlace(yellowAbility, 1);
+            abilityPlace(yellowAbility, 1)
                 break;
     }
 }
@@ -260,8 +262,8 @@ function ability() {
 
 function timerSaveTool(minType, milType, secType, minId, secId, milId) {
 
-    const oldTotalMilliseconds = minType * 60 * 100 + secType * 100 + milType;
-    const newTotalMilliseconds = mins * 60 * 100 + secs * 100 + milSecs;
+    const oldTotalMilliseconds = minType * 60 * 100 + secType * 100 + milType
+    const newTotalMilliseconds = mins * 60 * 100 + secs * 100 + milSecs
 
     if (newTotalMilliseconds > oldTotalMilliseconds) {
         localStorage.setItem(minId, mins.toString());
@@ -292,15 +294,15 @@ function drawCircles() {
         ctx.globalAlpha = 1
     }
     if (gameOver) {
-        ctx.fillStyle = "black";
-        ctx.strokeStyle = "red";
+        ctx.fillStyle = "black"
+        ctx.strokeStyle = "red"
     }
-    ctx.fill();
-    ctx.stroke();
+    ctx.fill()
+    ctx.stroke()
 
     if(hitbox){
         ctx.beginPath();
-        ctx.strokeStyle = 'blue';
+        ctx.strokeStyle = 'blue'
         ctx.rect(
             circle1.x - circle1.size,
             circle1.y - circle1.size,
@@ -338,20 +340,20 @@ function drawCircles() {
 
 function drawPlayer() {
     if (!player.facingLeft) {
-        ctx.save();
-        ctx.translate(player.x + player.w, player.y);
-        ctx.scale(-1, 1);
-        ctx.drawImage(SkinTexture, 0, 0, player.w, player.h);
-        ctx.restore();
+        ctx.save()
+        ctx.translate(player.x + player.w, player.y)
+        ctx.scale(-1, 1)
+        ctx.drawImage(SkinTexture, 0, 0, player.w, player.h)
+        ctx.restore()
     }else {
-        ctx.drawImage(SkinTexture, player.x, player.y, player.w, player.h);
+        ctx.drawImage(SkinTexture, player.x, player.y, player.w, player.h)
     }
 if (hitbox){
 
-            ctx.beginPath();
-        ctx.strokeStyle = 'orange';
-        ctx.rect(player.x, player.y, player.w, player.h);
-        ctx.stroke();
+        ctx.beginPath()
+        ctx.strokeStyle = 'orange'
+        ctx.rect(player.x, player.y, player.w, player.h)
+        ctx.stroke()
     }
 }
 
@@ -364,22 +366,22 @@ function checkCollision() {
         circle1.dy = 0;
         player.dx = 0;
         player.dy = 0;
-        replayBTN.style.display = "inline";
-        menuBTN.style.display = "inline";
-        clearTimeout(timerInterval);
+        replayBTN.style.display = "inline"
+        menuBTN.style.display = "inline"
+        clearTimeout(timerInterval)
         ctx.beginPath();
-        ctx.fillStyle = "red";
-        ctx.font = "30px Arial";
-        ctx.fillText("Game Over", 200, 100);
+        ctx.fillStyle = "red"
+        ctx.font = "30px Arial"
+        ctx.fillText("Game Over", 200, 100)
     }
-    const reducedWidth = player.w - 10;
-    const reducedHeight = player.h - 10;
+    const reducedWidth = player.w - 10
+    const reducedHeight = player.h - 10
     
-    const distanceX1 = Math.abs(circle1.x - (player.x + reducedWidth / 2));
-    const distanceY1 = Math.abs(circle1.y - (player.y + reducedHeight / 2));
+    const distanceX1 = Math.abs(circle1.x - (player.x + reducedWidth / 2))
+    const distanceY1 = Math.abs(circle1.y - (player.y + reducedHeight / 2))
 
-    const distanceX2 = Math.abs(circle2.x - (player.x + reducedWidth / 2));
-    const distanceY2 = Math.abs(circle2.y - (player.y + reducedHeight / 2));
+    const distanceX2 = Math.abs(circle2.x - (player.x + reducedWidth / 2))
+    const distanceY2 = Math.abs(circle2.y - (player.y + reducedHeight / 2))
 
     if (distanceX1 < (reducedWidth / 2 + circle1.size) &&
     distanceY1 < (reducedHeight / 2 + circle1.size) && !invincible){
@@ -393,9 +395,9 @@ function checkCollision() {
     }
 }
 
-let timeoutDelay;
+let timeoutDelay
 let invincible = false
-let X2Speed = false;
+let X2Speed = false
 let freeze = false
 let seconds1 = 9
 let seconds2 = 4
@@ -467,79 +469,77 @@ function abilityMechanics(event) {
                     invincible = true;
                     SkinTexture.style.opacity = 0.5
                     setTimeout(() => {
-                        invincible = false;
+                    invincible = false;
+                    SkinTexture.style.opacity = 1;
                     }, 3000);
                     break;
             }
-        }
     }
-}
+    }}
 
 document.addEventListener('keydown', abilityMechanics);
 document.addEventListener('click', abilityMechanics);
 
-function update() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+let lastTime = 0;
 
-        drawPlayer();
-        newPos();
-        drawCircles();
-        moveCircles();
-        checkCollision();
+function update(currentTime) {
+    currentTime *= 0.001
+    const deltaTime = currentTime - lastTime
+    lastTime = currentTime
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+    movePlayer(deltaTime)
+    newPos()
+    moveCircles(deltaTime)
+    checkCollision()
+
+    drawPlayer()
+    drawCircles()
+
+    if (seconds1 === 9 || seconds1 === 0) {
         ability()
+    } else {
+        abilityPlace(OFFability)
+    }
 
-        if(seconds1 === 9 || seconds1 === 0){
-            ability()
-        }else{
-            abilityPlace(OFFability);
-        }
-
-
-        requestAnimationFrame(update);
+    requestAnimationFrame(update)
 }
 
-function movePlayer() {
-    if (gameStarted && !gameOver){
-        if(diff != 3){
+
+function movePlayer(deltaTime) {
+    if (gameStarted && !gameOver) {
+        let moveSpeed = player.speed
+        if (X2Speed) moveSpeed *= 2
+
+        const distance = moveSpeed * deltaTime
+
+        // Horizontal movement
+        if (diff !== 3) {
             if (player.keys.ArrowRight || player.keys.Right || player.keys.d || player.keys.D) {
-                if(X2Speed){
-                    player.dx = player.speed * 2;
-                    player.facingLeft = false;
-                }else{
-                    player.dx = player.speed;
-                    player.facingLeft = false;
-                }
-            }else if (player.keys.ArrowLeft || player.keys.Left || player.keys.a || player.keys.A) {
-                if(X2Speed){
-                    player.dx = -player.speed * 2;
-                    player.facingLeft = true;
-                }else{
-                    player.dx = -player.speed;
-                    player.facingLeft = true;
-                }
+                player.dx = distance
+                player.facingLeft = false
+            } else if (player.keys.ArrowLeft || player.keys.Left || player.keys.a || player.keys.A) {
+                player.dx = -distance
+                player.facingLeft = true
             } else {
-                player.dx = 0;
+                player.dx = 0
             }
         }
-        if(diff != 4){
-        if (player.keys.ArrowDown || player.keys.Down || player.keys.s || player.keys.S) {
-            if(X2Speed){
-                player.dy = player.speed * 2;
-            }else{
-                player.dy = player.speed;
+
+        // Vertical movement
+        if (diff !== 4) {
+            if (player.keys.ArrowDown || player.keys.Down || player.keys.s || player.keys.S) {
+                player.dy = distance
+            } else if (player.keys.ArrowUp || player.keys.Up || player.keys.w || player.keys.W) {
+                player.dy = -distance
+            } else {
+                player.dy = 0
             }
-        }else if (player.keys.ArrowUp || player.keys.Up || player.keys.w || player.keys.W) {
-            if(X2Speed){
-                player.dy = -player.speed * 2;
-            }else{
-                player.dy = -player.speed;
-            }
-        } else {
-            player.dy = 0;
         }
-    }
     }
 }
+
 const randDirection = [1, -1];
 let direction1X = getRandomItemFromArray(randDirection);
 let direction1Y = getRandomItemFromArray(randDirection);
@@ -564,43 +564,43 @@ function counter() {
 counter()
 update()
 
-function moveCircles() {
-    if(direction1X === direction2X && direction1Y === direction2Y && diff === 2){
+function moveCircles(deltaTime) {
+    if (direction1X === direction2X && direction1Y === direction2Y && diff === 2) {
         direction1X = getRandomItemFromArray(randDirection);
         direction1Y = getRandomItemFromArray(randDirection);
         direction2X = getRandomItemFromArray(randDirection);
         direction2Y = getRandomItemFromArray(randDirection);
-    }else{
+    } else {
         if (gameStarted) {
+            let speedScale = deltaTime;
+
             if (countt < ballDelay) {
-                circle1.y += (circle1.dy * direction1Y) / 2;
-                circle1.x += (circle1.dx * direction1X) / 2;
+                // Slower initial movement (divided by 2)
+                circle1.y += (circle1.dy * direction1Y * speedScale) / 2;
+                circle1.x += (circle1.dx * direction1X * speedScale) / 2;
 
-                circle2.y += (circle2.dy * direction2Y) / 2;
-                circle2.x += (circle2.dx * direction2X) / 2;
-            }else if(freeze === true){
-                circle1.y += 0
-                circle1.x += 0
-
-                circle2.y += 0
-                circle2.x += 0
+                circle2.y += (circle2.dy * direction2Y * speedScale) / 2;
+                circle2.x += (circle2.dx * direction2X * speedScale) / 2;
+            } else if (freeze === true) {
+                // Freeze: no movement
+                // no need to write += 0
             } else {
-                circle1.y += circle1.dy * direction1Y;
-                circle1.x += circle1.dx * direction1X;
+                circle1.y += circle1.dy * direction1Y * speedScale;
+                circle1.x += circle1.dx * direction1X * speedScale;
 
-                circle2.y += circle2.dy * direction2Y;
-                circle2.x += circle2.dx * direction2X;
+                circle2.y += circle2.dy * direction2Y * speedScale;
+                circle2.x += circle2.dx * direction2X * speedScale;
             }
-    
+
+            // Wall collision bounce logic
             if (circle1.x + circle1.size > canvas.width || circle1.x - circle1.size < 0) {
                 direction1X *= -1;
             }
             if (circle1.y + circle1.size > canvas.height || circle1.y - circle1.size < 0) {
                 direction1Y *= -1;
             }
-    
+
             if (diff === 2) {
-    
                 if (circle2.x + circle2.size > canvas.width || circle2.x - circle2.size < 0) {
                     direction2X *= -1;
                 }
@@ -612,18 +612,17 @@ function moveCircles() {
     }
 }
 
+
 function keyDown(e) {
-    player.keys[e.key] = true;
-    movePlayer();
+    player.keys[e.key] = true
 }
 
 function keyUp(e) {
-    player.keys[e.key] = false;
-    movePlayer();
+    player.keys[e.key] = false
 }
 
-document.addEventListener('keydown', keyDown);
-document.addEventListener('keyup', keyUp);
+document.addEventListener('keydown', keyDown)
+document.addEventListener('keyup', keyUp)
 
 function updateCounter(){
     if (gameStarted) {
