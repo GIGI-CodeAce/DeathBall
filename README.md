@@ -55,7 +55,11 @@ function update() {
  <img src="/Media/mdMedia/characters.png" alt="project-screenshot"  style="width: 80%; height: 400px">
   <h3>Gamemodes</h3>
   <img src="/Media/mdMedia/gamemodes.png" alt="project-screenshot" style="width: 80%; height: 420px">
-</div><hr><br></br>
+</div><hr><br>
+
+  ## 🪪 License
+This project is licensed under the [MIT License](LICENSE).
+</br></br>
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-62b1ff?style=for-the-badge&logo=web&logoColor=white)](https://www.gigicodeace.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-3e3eff?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dobre-robert-03653b331/)

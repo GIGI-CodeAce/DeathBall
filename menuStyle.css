@@ -200,10 +200,10 @@ text-shadow: 1px 1px 5px rgba(245, 245, 245, 0.900), -1px -1px 5px rgba(245, 245
     color: hsl(0, 0%, 70%)
 }
 .normal{
-  background: url(Media/wall.jpg);
+  background: url(Media/walls//wall.jpg);
 }
 .insane{
-  background: url(Media/wall2.png);
+  background: url(Media/walls/wall2.png);
 }
 .normal, .insane,.vertical, .horizontal{
   font-size: 20px;
@@ -227,7 +227,7 @@ text-shadow: 1px 1px 5px rgba(245, 245, 245, 0.900), -1px -1px 5px rgba(245, 245
  .vertical, .horizontal{
   width: 270px;
   background-color:brown;
-  background: url(Media/wall3.jpg);
+  background: url(Media/walls/wall3.jpg);
   background-size: 90%;
 }
 #records{
