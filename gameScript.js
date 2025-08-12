@@ -59,15 +59,15 @@ if(hitboxBtn){
 const circle1 = {
     x: 275,
     y: 250,
-    dx: 660,
-    dy: 480,
+    dx: 600,
+    dy: 420,
     size: 30
 }
 const circle2 = {
     x: 275,
     y: 250,
-    dx: 660,
-    dy: 480,
+    dx: 600,
+    dy: 420,
     size: 30
 }
 
@@ -558,7 +558,7 @@ function counter() {
         if (countt === ballDelay) {
             clearTimeout(timeoutid);
         } else {
-            timeoutid = setTimeout(counter, 100);
+            timeoutid = setTimeout(counter, 100)
         }
     }
 counter()
@@ -576,36 +576,35 @@ function moveCircles(deltaTime) {
 
             if (countt < ballDelay) {
                 // Slower initial movement (divided by 2)
-                circle1.y += (circle1.dy * direction1Y * speedScale) / 2;
-                circle1.x += (circle1.dx * direction1X * speedScale) / 2;
+                circle1.y += (circle1.dy * direction1Y * speedScale) / 2
+                circle1.x += (circle1.dx * direction1X * speedScale) / 2
 
-                circle2.y += (circle2.dy * direction2Y * speedScale) / 2;
-                circle2.x += (circle2.dx * direction2X * speedScale) / 2;
+                circle2.y += (circle2.dy * direction2Y * speedScale) / 2
+                circle2.x += (circle2.dx * direction2X * speedScale) / 2
             } else if (freeze === true) {
                 // Freeze: no movement
-                // no need to write += 0
             } else {
-                circle1.y += circle1.dy * direction1Y * speedScale;
-                circle1.x += circle1.dx * direction1X * speedScale;
+                circle1.y += circle1.dy * direction1Y * speedScale
+                circle1.x += circle1.dx * direction1X * speedScale
 
-                circle2.y += circle2.dy * direction2Y * speedScale;
-                circle2.x += circle2.dx * direction2X * speedScale;
+                circle2.y += circle2.dy * direction2Y * speedScale
+                circle2.x += circle2.dx * direction2X * speedScale
             }
 
             // Wall collision bounce logic
             if (circle1.x + circle1.size > canvas.width || circle1.x - circle1.size < 0) {
-                direction1X *= -1;
+                direction1X *= -1
             }
             if (circle1.y + circle1.size > canvas.height || circle1.y - circle1.size < 0) {
-                direction1Y *= -1;
+                direction1Y *= -1
             }
 
             if (diff === 2) {
                 if (circle2.x + circle2.size > canvas.width || circle2.x - circle2.size < 0) {
-                    direction2X *= -1;
+                    direction2X *= -1
                 }
                 if (circle2.y + circle2.size > canvas.height || circle2.y - circle2.size < 0) {
-                    direction2Y *= -1;
+                    direction2Y *= -1
                 }
             }
         }
@@ -638,7 +637,7 @@ function updateCounter(){
         }
             timerUI.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}:${milSecs.toString().padStart(2, '0')}`
     
-        timerInterval = setTimeout(updateCounter , 10)
+        timerInterval = setTimeout(updateCounter , 1)
  }
  updateCounter()
 
