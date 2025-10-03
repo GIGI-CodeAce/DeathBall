@@ -1,4 +1,4 @@
-<h1 align="center" id="title">DeathBall v1.1.4</h1>
+<h1 align="center" id="title">DeathBall</h1>
 
 <p align="center">
   <img src="\Media\skins\skin.png" alt="project-image" style="width: 40%; height: 300px">
@@ -23,9 +23,26 @@ Death Ball, a game that challenges you to navigate through deadly flying spheres
 *   3 different abilites with unique mechanics
 *   Able to set time records for most surviving over gamemodes you've played
 *   Running on HTML 5 canvas by an update function:
+  
+  <h2 align="center">Languages and tools used</h2>
+<p align="center">
+  </a>
+  <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
+            alt="html5" width="40" height="40" />
+  </a>
+    <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" 
+            alt="CSS3" width="40" height="40" />
+  </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" 
+            alt="javascript" width="40" height="40" />
+  </a>
+</a>
+</p>
 
-
-<hr>
+<h2 align="center">Snippets of code</h2>
 
 ```javascript
 // ...
@@ -45,7 +62,7 @@ function update() {
 }
 // ...
 ```
-<h2 align="center">Project Screenshots</h2>
+<h2 align="center">Project Screenshots:</h2>
 <div align="center">
 <div>
 <h3>Abilities</h3>
@@ -55,11 +72,7 @@ function update() {
  <img src="/Media/mdMedia/characters.png" alt="project-screenshot"  style="width: 80%; height: 400px">
   <h3>Gamemodes</h3>
   <img src="/Media/mdMedia/gamemodes.png" alt="project-screenshot" style="width: 80%; height: 420px">
-</div><hr><br>
-
-  ## 🪪 License
-This project is licensed under the [MIT License](LICENSE).
-</br></br>
+</div><br></br>
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-62b1ff?style=for-the-badge&logo=web&logoColor=white)](https://www.gigicodeace.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-3e3eff?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dobre-robert-03653b331/)
