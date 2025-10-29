@@ -59,15 +59,15 @@ if(hitboxBtn){
 const circle1 = {
     x: 275,
     y: 250,
-    dx: 660,
-    dy: 480,
+    dx: 600,
+    dy: 420,
     size: 30
 }
 const circle2 = {
     x: 275,
     y: 250,
-    dx: 660,
-    dy: 480,
+    dx: 600,
+    dy: 420,
     size: 30
 }
 
